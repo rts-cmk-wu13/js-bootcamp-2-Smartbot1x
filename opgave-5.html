@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="stylesheet" href="css/niv 1 css1.css">
+	<link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/opg5.css">
+	<script src="https://kit.fontawesome.com/ca81e83595.js" crossorigin="anonymous"></script>
+	
+	<script src="js/nav.js" defer> </script>
+	<title>Småopgaver 01 (Niveau 2)</title>
+</head>
+<body>
+	
+	<header>
+		<button id="toggle-btn"><i class="fas fa-bars"> Opgaver</i></button>
+<nav id="sidebar">
+  <ul>
+    <li><a href="opgave-1.html"></i> opgave 01</a></li>
+    <li><a href="opgave-2.html">opgave 02</a></li>
+    <li><a href="opgave-3.html"> opgave 03</a></li>
+    <li><a href="opgave-4.html">opgave 04</a></li>
+    <li class="current"><a href="#">opgave 05</a></li>
+  </ul>
+</nav>
+
+	</header>
+
+
+    <main>
+        <div class="cards">
+            <div class="card">
+                <h2 class="card__header">Apple</h2>
+                <img class="card__image" src="https://assets.clevelandclinic.org/transform/cd71f4bd-81d4-45d8-a450-74df78e4477a/Apples-184940975-770x533-1_jpg" alt="Apple">
+                <div class="card__details">
+                    <p class="card__price">
+                        <span class="card__price-value">7</span> DKK
+                    </p>
+                    <p>Count: <span class="card__item-count">1</span></p>
+                    <p>Total Price: <span class="card__total-price">7</span> DKK</p>
+                </div>
+                <div class="card__controls">
+                    <button class="card__decrease">-</button>
+                    <button class="card__increase">+</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Select elements 
+        let increaseBtn = document.querySelector(".card__increase");
+        let decreaseBtn = document.querySelector(".card__decrease");
+        let countElem = document.querySelector(".card__item-count");
+        let count = Number(countElem.textContent); 
+
+        let price = Number(document.querySelector(".card__price-value").textContent);
+        let totalPriceElem = document.querySelector(".card__total-price");
+
+        // Function to update 
+        function updateCountAndPrice(count, price) {
+            countElem.textContent = count; 
+            totalPriceElem.textContent = count * price; 
+        }
+
+        // Event listener for increment button
+        increaseBtn.addEventListener("click", () => {
+            count++;
+            updateCountAndPrice(count, price);
+        });
+
+        // Event listener for decrement button
+        decreaseBtn.addEventListener("click", () => {
+            if (count > 1) { 
+                count--;
+                updateCountAndPrice(count, price);
+            }
+        });
+    </script>
+</body>
+</html>
