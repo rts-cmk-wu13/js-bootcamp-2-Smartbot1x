@@ -5,8 +5,9 @@
 
 body {
 	font-family: Verdana;
-	font-size: 13px;
-	margin: 20px;
+    font-size: 20px;
+    margin: 279px;
+    text-align: center;
 }
 
 h1 {
@@ -43,11 +44,21 @@ label {
 
 #my-button {
 	padding: 8px;
-	background-color: #eee;
+	background-color: #ff0000;
 	border: 1px solid #aaa;
 	border-radius: 5px;
+	cursor: pointer;
 }
+#my-button:hover {
+	color: black;
+}
+
 
 #my-button:focus {
 	outline: none;
 }
+a:visited {
+	color: red;
+}
+
+
